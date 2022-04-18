@@ -19,12 +19,17 @@ public class EmpleadoController {
         return empleadoDAO.getEmpleados();
     }
 
+    @RequestMapping(value = "api/empleados/{cargo}", method = RequestMethod.GET)
+    public List<Empleado> getEmpleadosPorCargo(@PathVariable String cargo) {
+        return empleadoDAO.getEmpleadosPorCargo(cargo);
+    }
+
     @RequestMapping(value = "api/empleados", method = RequestMethod.POST)
     public void registrarEmpleado(@RequestBody Empleado empleado) { //convierte el json que recibe en un empleado
         empleadoDAO.registrarEmpleado(empleado);
     }
 
-    @RequestMapping(value = "api/empleados{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "api/empleados", method = RequestMethod.PUT)
     public void updateEmpleado(@RequestBody Empleado empleado) {
         empleadoDAO.updateEmpleado(empleado);
     }

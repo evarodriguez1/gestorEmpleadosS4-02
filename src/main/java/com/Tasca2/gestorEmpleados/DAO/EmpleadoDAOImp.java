@@ -24,8 +24,15 @@ public class EmpleadoDAOImp implements EmpleadoDAO{
         return resultado;
     }
 
+    @Override
+    public List<Empleado> getEmpleadosPorCargo(String cargo) {
+        String query = "FROM Empleado where cargo like '%" + cargo + "%'";
+        List<Empleado>resultado= entityManager.createQuery(query).getResultList();
+        return resultado;
+    }
 
-   @Override
+
+    @Override
     public void eliminar(Long id) {
         Empleado empleado = entityManager.find(Empleado.class, id);
         entityManager.remove(empleado);

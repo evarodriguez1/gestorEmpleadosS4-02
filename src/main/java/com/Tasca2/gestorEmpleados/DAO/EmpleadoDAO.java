@@ -8,6 +8,8 @@ public interface EmpleadoDAO {
 
     List<Empleado> getEmpleados();
 
+    List<Empleado> getEmpleadosPorCargo(String cargo);
+
     void eliminar(Long id);
 
     void registrarEmpleado(Empleado empleado);

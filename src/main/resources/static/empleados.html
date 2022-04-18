@@ -364,6 +364,15 @@
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Listado de Empleados</h6>
+
+                            <a href="registrar.html" class="m-0 font-weight-bold text-primary">Agregar Empleado</a>
+                            <select onchange="cargarEmpleados(this.value)">
+                                <option value="">Filtrar</option>
+                                <option value="director">Directores</option>
+                                <option value="administrativo">Administrativos</option>
+                                <option value="operario">Operarios</option>
+                            </select>
+
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
