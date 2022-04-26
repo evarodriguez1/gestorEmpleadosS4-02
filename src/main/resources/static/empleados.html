@@ -167,6 +167,7 @@
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
+
                                 </button>
                             </div>
                         </div>
@@ -366,6 +367,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">Listado de Empleados</h6>
 
                             <a href="registrar.html" class="m-0 font-weight-bold text-primary">Agregar Empleado</a>
+
                             <select onchange="cargarEmpleados(this.value)">
                                 <option value="">Filtrar</option>
                                 <option value="director">Directores</option>
@@ -373,7 +375,24 @@
                                 <option value="operario">Operarios</option>
                             </select>
 
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button" onclick="alert(mostrarEmpleado())">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+
+
+
                         </div>
+
+
+
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="empleados" width="100%" cellspacing="0">
@@ -460,6 +479,7 @@
 
     <!-- Page level custom scripts -->
     <script src="js/empleados.js"></script>
+
 
 </body>
 

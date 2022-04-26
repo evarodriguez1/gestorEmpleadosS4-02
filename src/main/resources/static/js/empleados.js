@@ -26,6 +26,7 @@ if (cargo) {
      let botonEliminar = '<a td:href="#" onclick="eliminarEmpleado('+empleado.id+')" class="btn btn-danger">Delete</a>';
      let botonUpdate = '<a td:href="#" onclick="modificarEmpleado('+empleado.id+')" class="btn btn-primary">Update</a>';
 
+
      let empleadoHtml = '<tr><td>'+empleado.nombre+'</td><td>'
                         +empleado.apellido+'</td><td>'+empleado.cargo+
                         '</td><td>'+empleado.salario+'</td><td>'+empleado.id+
@@ -57,4 +58,31 @@ async function eliminarEmpleado (id){
     }
   });
   location.reload();
+}
+
+async function mostrarEmpleado(id){
+    let datos = {};
+
+    datos.id = window.location.toString().split('id=')[1]
+
+
+    datos.nombre = document.getElementById('txtNombre').value
+    datos.apellido = document.getElementById('txtApellido').value
+    datos.cargo = document.getElementById('txtCargo').value
+    datos.salario = document.getElementById('txtSalario').value
+
+
+
+    const request = await fetch('api/empleados', {
+        method: 'GET',
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datos)
+      });
+      location.reload();
+
+
+        // return request o json del empleado
 }
