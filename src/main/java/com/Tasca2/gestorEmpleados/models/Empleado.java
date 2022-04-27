@@ -1,11 +1,12 @@
 package com.Tasca2.gestorEmpleados.models;
 
-//esta libreria lombok hace que sea mas abreviados lo etters y setters
+//esta libreria lombok hace que sea mas abreviados getters y setters
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
+//
 @Entity
 @Table (name = "empleados")
 public class Empleado {
