@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 //esta clase sirve para controlar las URL
 
-@RestController ////para indicar que la clase es controlador
+@RestController //para indicar que la clase es controlador
 public class EmpleadoController {
 
     @Autowired //@autowired inyectar unas dependencias con otras dentro de Spring, hace una auto relacion de los campos

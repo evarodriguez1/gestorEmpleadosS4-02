@@ -6,13 +6,12 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-//
-@Entity
-@Table (name = "empleados")
+@Entity //Una entidad de persistencia
+@Table (name = "empleados") //tabla de la base de datos con el nombre real
 public class Empleado {
     @Id
     @Getter@Setter
-    @Column (name = "id")
+    @Column (name = "id") //para generar la columna de la tabla de bbdd
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
